@@ -4,21 +4,16 @@ To develop a smart transportation system, which that aims to provide real-time i
 
 Reference : 
 
-  One Delhi App
-  
-  Charter App
-  
-  https://map.mta.info/
+    One Delhi App
+    Charter App
+    https://map.mta.info/
 
 TECH STACK:
 
-  Frontend : React Native 
-  
-  Backed: Go/Express.js 
-  
-  APIs : Google Map Api 
-  
-  Payment : Stripe
+    Frontend : React Native 
+    Backed: Go/Express.js 
+    APIs : Google Map Api 
+    Payment : Stripe
 
 FEATURES:
 
@@ -42,15 +37,12 @@ FEATURES:
 
 Slide:
 
-  Feature and explanation
+    Feature and explanation
+    How to implement
+    Design
+    Use case
   
-  How to implement
   
-  Design
-  
-  Use case
-
-
 
 
 
