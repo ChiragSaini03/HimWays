@@ -1,14 +1,25 @@
 import { View, Text, TouchableOpacity } from "react-native";
-import React, { useState } from "react";
-import { useNavigation } from "@react-navigation/native";
-import { Button } from "react-native";
+import React, { useState, useEffect } from "react";
+import { useNavigation, useNavigationState } from "@react-navigation/native";
+
 import tailwind from "twrnc";
 import { Home, BusFront, Ticket, User2Icon } from "lucide-react-native";
+// import {  } from "react";
 // import Dashboard from "../screens/Dashboard";
 
 const Menu = () => {
+  console.log(curr_route);
   const navigation = useNavigation();
   const [selected_color, setColor] = useState("Dashboard");
+
+  //   const route = useRoute();
+  //   console.log(route.name);
+
+  useEffect(() => {
+    () => {
+      const curr_route = state.routes[state.routes.length - 1].name;
+    };
+  }, [state?.routes.length]);
 
   return (
     <View
@@ -30,15 +41,28 @@ const Menu = () => {
       <TouchableOpacity
         style={tailwind`w-[25%] flex items-center justify-center`}
         onPress={() => {
-          setColor("Track");
-          navigation.navigate("Track_Bus");
+          setColor("Track Bus");
+          navigation.navigate("Track Bus");
         }}
       >
         <BusFront
-          color={selected_color === "Track" ? "red" : "gray"}
+          color={selected_color === "Track Bus" ? "red" : "gray"}
           size={28}
         />
         <Text style={tailwind`text-xs`}>Track</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={tailwind`w-[25%] flex items-center justify-center`}
+        onPress={() => {
+          setColor("Show Ticket");
+          navigation.navigate("Show Ticket");
+        }}
+      >
+        <Ticket
+          color={selected_color === "Show Ticket" ? "red" : "gray"}
+          size={28}
+        />
+        <Text style={tailwind`text-xs`}>Show Ticket</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={tailwind`w-[25%] flex items-center justify-center`}
@@ -62,19 +86,6 @@ const Menu = () => {
       >
         <Text style={tailwind`text-xs`}>Sign Up</Text>
       </TouchableOpacity> */}
-      <TouchableOpacity
-        style={tailwind`w-[25%] flex items-center justify-center`}
-        onPress={() => {
-          setColor("Ticket");
-          navigation.navigate("Bus_Ticket");
-        }}
-      >
-        <Ticket
-          color={selected_color === "Ticket" ? "red" : "gray"}
-          size={28}
-        />
-        <Text style={tailwind`text-xs`}>Bus Ticket</Text>
-      </TouchableOpacity>
     </View>
   );
 };

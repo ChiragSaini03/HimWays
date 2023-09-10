@@ -1,11 +1,10 @@
 import { View, Text, StyleSheet, Platform } from "react-native";
-import MapView from "react-native-maps";
+import MapView, { Marker } from "react-native-maps";
 import React from "react";
 
 const Track = () => {
   return (
     <View style={styles.container}>
-      <Text>Track</Text>
       <MapView
         style={styles.map}
         initialRegion={{
@@ -14,7 +13,9 @@ const Track = () => {
           latitudeDelta: 0.03,
           longitudeDelta: 0.03,
         }}
-      />
+      >
+        <Marker coordinate={{ latitude: nsut.lat, longitude: nsut.long }} />
+      </MapView>
     </View>
   );
 };
@@ -30,5 +31,10 @@ const styles = StyleSheet.create({
     height: "100%",
   },
 });
+
+const nsut = {
+  lat: 28.61000095218192,
+  long: 77.03797129324518,
+};
 
 export default Track;
